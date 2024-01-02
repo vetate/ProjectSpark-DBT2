@@ -36,7 +36,7 @@ product_snapshot as (
     FROM {{ source('saleslt', 'product') }}
 ),
 
-saleorderheader_snapshot as (
+salesorderheader_snapshot as (
     SELECT
         SalesOrderID,
         RevisionNumber,
@@ -104,7 +104,7 @@ transformed as (
         soh.Comment
     from salesorderdetail_snapshot sod
     left join product_snapshot p on sod.ProductID = p.ProductID
-    left join saleorderheader_snapshot soh on sod.SalesOrderID = soh.SalesOrderID
+    left join salesorderheader_snapshot soh on sod.SalesOrderID = soh.SalesOrderID
 )
 
 select * from transformed

@@ -4,12 +4,11 @@ models:
   - name: dim_sales
     description: This is the fact table for sales
     columns:
-      - name: saleOrderID
+      - name: salesOrderID
         description: The surrogate key of the sale order
         tests:
-          - unique
           - not_null
-      - name: saleOrderDetailID
+      - name: salesOrderDetailID
         description: The surrogate key of the sale order detail
         tests:
           - unique
