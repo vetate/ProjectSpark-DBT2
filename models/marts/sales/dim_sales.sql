@@ -64,8 +64,7 @@ salesorderheader_snapshot as (
 
 transformed as (
     select
-        sod.SalesOrderID,
-        sod.SalesOrderDetailID,
+        sod.SalesOrderDetailID,  -- Include only SalesOrderDetailID
         sod.OrderQty,
         sod.ProductID,
         sod.UnitPrice,
